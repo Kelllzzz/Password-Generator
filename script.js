@@ -90,6 +90,22 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+let characterLength = prompt("It must be at least 8 characters");
+
+ if (isNaN(characterLength)) {
+ alert('Input must be a number');
+ return;
+}
+
+if (characterLength < 8 || characterLength > 128) {
+ alert('Please enter a value between 8 and 128');
+ return;
+}
+ 
+let characterTypeLower = confirm('Please include Lowercase characters')
+let characterTypeUpper = confirm('Please include Uppercase characters' )
+let characterTypeNumeric = confirm('Please include Numeric characters')
+let characterTypeSpecial = confirm('Please include Special characters')
 
 }
 
@@ -97,6 +113,7 @@ function getPasswordOptions() {
 function getRandom(arr) {
 
 }
+
 
 // Function to generate password with user input
 function generatePassword() {
