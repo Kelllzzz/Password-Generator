@@ -87,37 +87,42 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+let characterLength;
+let characterTypeLower;
+let characterTypeUpper;
+let characterTypeNumeric;
+let characterTypeSpecial;
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-let characterLength = prompt("It must be at least 8 characters");
+  characterLength = prompt("Password length must be atleast 8 characters, How many characters do you require?");
 
- if (isNaN(characterLength)) {
- alert('Input must be a number');
- return;
-}
+  if (isNaN(characterLength)) {
+    alert('Input must be a number');
+    return;
+  }
 
-if (characterLength < 8 || characterLength > 128) {
- alert('Please enter a value between 8 and 128');
- return;
-}
- 
-let characterTypeLower = confirm('Please include Lowercase characters')
-let characterTypeUpper = confirm('Please include Uppercase characters' )
-let characterTypeNumeric = confirm('Please include Numeric characters')
-let characterTypeSpecial = confirm('Please include Special characters')
+  if (characterLength < 8 || characterLength > 128) {
+    alert('Please enter a value between 8 and 128');
+    return;
+  }
+
+  characterTypeLower = confirm('Do you want to include Lowercase characters')
+  characterTypeUpper = confirm('Do you want to include Uppercase characters')
+  characterTypeNumeric = confirm('Do you want to include Numeric characters')
+  characterTypeSpecial = confirm('Do you want to include Special characters')
 
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
+function getRandom() {
+  
 }
 
 
 // Function to generate password with user input
 function generatePassword() {
-
+ 
 }
 
 // Get references to the #generate element
