@@ -124,7 +124,34 @@ function getRandomElement(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
- 
+  getPasswordOptions();
+  console.log(characterLength);
+  console.log(characterTypeLower);
+  console.log(characterTypeUpper);
+  console.log(characterTypeNumeric);
+  console.log(characterTypeSpecial);
+
+  var plusibleCharacters = []
+  var password = ''
+  if (characterTypeLower === true) {
+    plusibleCharacters = plusibleCharacters.concat(lowerCasedCharacters)
+  }
+  if (characterTypeUpper === true) {
+    plusibleCharacters = plusibleCharacters.concat(upperCasedCharacters)
+  }
+  if (characterTypeNumeric === true) {
+    plusibleCharacters = plusibleCharacters.concat(numericCharacters)
+  }
+  if (characterTypeSpecial === true) {
+    plusibleCharacters = plusibleCharacters.concat(specialCharacters)
+  }
+  console.log("This is plusible characters ", plusibleCharacters);
+
+  for (let index = 0; index < characterLength; index++) {
+    password += getRandomElement(plusibleCharacters);
+  }
+  return password;
+
 }
 
 // Get references to the #generate element
