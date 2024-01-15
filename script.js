@@ -129,7 +129,11 @@ function getRandomElement(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
+  var run = getPasswordOptions();
+  if (run == false) {
+    return "Please try again"
+  }
+  console.log(run);
   console.log(characterLength);
   console.log(characterTypeLower);
   console.log(characterTypeUpper);
