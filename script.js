@@ -99,19 +99,24 @@ function getPasswordOptions() {
 
   if (isNaN(characterLength)) {
     alert('Input must be a number');
-    return;
+    return false;
   }
 
   if (characterLength < 8 || characterLength > 128) {
     alert('Please enter a value between 8 and 128');
-    return;
+    return false;
   }
 
   characterTypeLower = confirm('Do you want to include Lowercase characters')
   characterTypeUpper = confirm('Do you want to include Uppercase characters')
   characterTypeNumeric = confirm('Do you want to include Numeric characters')
   characterTypeSpecial = confirm('Do you want to include Special characters')
+  if (characterTypeLower == false && characterTypeUpper == false && characterTypeNumeric == false && characterTypeSpecial == false) {
 
+    alert('You have to pick an option')
+    return false;
+  }
+  return true
 }
 
 // Function for getting a random element from an array
@@ -124,7 +129,7 @@ function getRandomElement(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  getPasswordOptions();
+
   console.log(characterLength);
   console.log(characterTypeLower);
   console.log(characterTypeUpper);
